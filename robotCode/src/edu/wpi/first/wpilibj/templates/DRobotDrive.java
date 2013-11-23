@@ -14,8 +14,8 @@ import edu.wpi.first.wpilibj.SpeedController;
  * @author brandon
  */
 public class DRobotDrive implements IDevice{
-    SpeedController FL,FR,RL,RR;
-    RobotDrive impl;
+    private SpeedController FL,FR,RL,RR;
+    private RobotDrive impl;
     double x,y,rotation;
     
     public DRobotDrive setFL(SpeedController s){
