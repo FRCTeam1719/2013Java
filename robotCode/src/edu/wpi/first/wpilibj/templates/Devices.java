@@ -7,7 +7,6 @@
 package edu.wpi.first.wpilibj.templates;
 
 import edu.wpi.first.wpilibj.Jaguar;
-import edu.wpi.first.wpilibj.RobotDrive;
 
 
 /**
@@ -15,7 +14,6 @@ import edu.wpi.first.wpilibj.RobotDrive;
  * @author brandon
  */
 public class Devices {
-    
     
     static DRobotDrive robotDrive;
     static Controllers controllers;
