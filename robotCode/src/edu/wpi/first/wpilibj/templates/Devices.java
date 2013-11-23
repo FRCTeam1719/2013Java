@@ -5,8 +5,7 @@
  */
 package edu.wpi.first.wpilibj.templates;
 
-import edu.wpi.first.wpilibj.Jaguar;
-import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.Victor;
 
 /**
  *
@@ -28,10 +27,10 @@ public class Devices {
                 .init();
                 
         robotDrive = new DRobotDrive()
-                .setFL(new Jaguar(1))
-                .setFR(new Jaguar(2))
-                .setRL(new Jaguar(3))
-                .setRR(new Jaguar(4))
+                .setFL(new Victor(1))
+                .setFR(new Victor(2))
+                .setRL(new Victor(9))
+                .setRR(new Victor(10))
                 .init();
         controllers = new Controllers()
                 .setDriverJoystick(new ImplJoystick().setPort(1).init())
