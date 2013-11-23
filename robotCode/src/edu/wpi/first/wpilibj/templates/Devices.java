@@ -14,7 +14,9 @@ import edu.wpi.first.wpilibj.RobotDrive;
  */
 public class Devices {
 
+
     static ICompressor compressor;
+
     static DRobotDrive robotDrive;
     static Controllers controllers;
     public static IDevice[] DEVICES;

@@ -23,6 +23,7 @@ public class RobotTemplate extends IterativeRobot {
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
+    IDevice autonomousController;
     public void robotInit() {
         System.out.println("INIT");
         Devices.init();
@@ -31,13 +32,14 @@ public class RobotTemplate extends IterativeRobot {
     public void autonomousInit(){
         //NOP?
         Devices.controllers.disbale();
-        state=0;
+        autonomousController=new AutonomousController();
     }
     /**
      * This function is called periodically during autonomous
      */
-    int state=0;
     public void autonomousPeriodic() {
+        autonomousController.step();
+        step();
     }
     
     public void teleopInit(){
@@ -48,6 +50,7 @@ public class RobotTemplate extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
+        step();
     }
     
     /**
@@ -60,20 +63,6 @@ public class RobotTemplate extends IterativeRobot {
     private void step(){
         for(int i=0; i< Devices.DEVICES.length; i++){
             Devices.DEVICES[i].step();
-        }
-    }
- 
-    
-    
-    private void wait(int milli){
-        long start=(new Date()).getTime();
-        while ((new Date()).getTime() - start < milli){
-            step();
-            try {
-                Thread.sleep(1);
-            } catch (InterruptedException ex) {
-                ex.printStackTrace();
-            }
         }
     }
 }
