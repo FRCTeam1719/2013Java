@@ -17,6 +17,7 @@ public class AutonomousController implements IDevice{
     public AutonomousController(){
         commands= chain(new State[]{
            wheelStart,
+           delay(1000),
            shoot,
            delay(1000),
            shoot,

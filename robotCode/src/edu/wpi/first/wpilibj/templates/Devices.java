@@ -36,6 +36,7 @@ public class Devices {
                 .setDriverJoystick(new ImplJoystick().setPort(1).init())
                 .setRobotDrive(robotDrive)
                 .init();
+        
         DEVICES = new IDevice[]{robotDrive, controllers, compressor};
     }
 }
