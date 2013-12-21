@@ -16,6 +16,7 @@ public class AutonomousController implements IDevice{
     
     public AutonomousController(){
         commands= chain(new State[]{
+           wheelStart,
            shoot,
            delay(1000),
            shoot,
@@ -23,6 +24,7 @@ public class AutonomousController implements IDevice{
            shoot,
            delay(1000),
            shoot,
+           wheelStop,
            nop
         });
     }
@@ -50,8 +52,37 @@ public class AutonomousController implements IDevice{
     }
     
     private State shoot = new State() {
+        boolean done;
+        Shooter shooter = new Shooter();
         public boolean step() {
-            throw new Error("Not Implemented"); //To change body of generated methods, choose Tools | Templates.
+            return done;
+            //throw new Error("Not Implemented"); //To change body of generated methods, choose Tools | Templates.
+        }
+        public void init() {
+            shooter.inject();
+            done = true;
+        }
+    };
+    private State wheelStart = new State() {
+        Wheel wheel = new Wheel();
+        boolean done;
+        public boolean step() {
+            return done;
+        }
+        public void init(){
+            wheel.wheel(true);
+            done = true;
+        }
+    };
+    private State wheelStop = new State() {
+        Wheel wheel = new Wheel();
+        boolean done;
+        public boolean step() {
+            return done;
+        }
+        public void init(){
+            wheel.wheel(false);
+            done = true;
         }
     };
     
