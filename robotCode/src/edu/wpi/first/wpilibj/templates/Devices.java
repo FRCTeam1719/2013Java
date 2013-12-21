@@ -22,8 +22,8 @@ public class Devices {
 
     public static void init() {
         compressor = new ImplCompressor()
-                .setCompressorRelayChannel(2,6)
-                .setPressureSwitchChannel(7,6)
+                .setCompressorRelayChannel(2,2)
+                .setPressureSwitchChannel(7,2)
                 .init();
                 
         robotDrive = new DRobotDrive()
@@ -36,6 +36,6 @@ public class Devices {
                 .setDriverJoystick(new ImplJoystick().setPort(1).init())
                 .setRobotDrive(robotDrive)
                 .init();
-        DEVICES = new IDevice[]{robotDrive, controllers};
+        DEVICES = new IDevice[]{robotDrive, controllers, compressor};
     }
 }
