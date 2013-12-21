@@ -1,4 +1,6 @@
-# Created by http://gitignore.io
+#Netbeans
+nbproject/
+build/
 
 ### OSX ###
 .DS_Store
