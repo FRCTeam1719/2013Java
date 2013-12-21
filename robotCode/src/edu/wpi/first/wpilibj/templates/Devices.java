@@ -18,6 +18,7 @@ public class Devices {
 
     static DRobotDrive robotDrive;
     static Controllers controllers;
+    public static ShootingWheel wheel;
     public static IDevice[] DEVICES;
 
     public static void init() {
@@ -36,7 +37,8 @@ public class Devices {
                 .setDriverJoystick(new ImplJoystick().setPort(1).init())
                 .setRobotDrive(robotDrive)
                 .init();
-        
+        wheel = new ShootingWheel()
+                .setMotor(new Victor(2, 5));
         DEVICES = new IDevice[]{robotDrive, controllers, compressor};
     }
 }

@@ -13,7 +13,7 @@ import edu.wpi.first.wpilibj.SpeedController;
 
     
 
-public class Wheel {
+public class ShootingWheel implements IDevice{
   
     SpeedController motor = null;
     boolean spin;
@@ -25,14 +25,12 @@ public class Wheel {
             motor.set(0);
         }
     }
-    
-    public void wheel(boolean x){
-        if(x){
-            spin = true;
-        }
-        else{
-            spin = false;
-        }
+    public ShootingWheel setMotor(SpeedController s){
+        motor = s;
+        return this;
+    }
+    public void spinWheel(boolean x){
+        spin = x;
     }
     
     

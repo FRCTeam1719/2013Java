@@ -65,24 +65,24 @@ public class AutonomousController implements IDevice{
         }
     };
     private State wheelStart = new State() {
-        Wheel wheel = new Wheel();
+        ShootingWheel wheel = new ShootingWheel();
         boolean done;
         public boolean step() {
             return done;
         }
         public void init(){
-            wheel.wheel(true);
+            wheel.spinWheel(true);
             done = true;
         }
     };
     private State wheelStop = new State() {
-        Wheel wheel = new Wheel();
+        ShootingWheel wheel = new ShootingWheel();
         boolean done;
         public boolean step() {
             return done;
         }
         public void init(){
-            wheel.wheel(false);
+            wheel.spinWheel(false);
             done = true;
         }
     };
