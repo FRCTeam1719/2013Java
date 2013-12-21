@@ -32,7 +32,7 @@ public class Controllers implements IDevice{
     public void enable(){
         this.enabled=true;
     }
-    public void disbale(){
+    public void disable(){
         this.enabled=false;
     }
     

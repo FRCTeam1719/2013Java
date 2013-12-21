@@ -31,7 +31,7 @@ public class RobotTemplate extends IterativeRobot {
 
     public void autonomousInit(){
         //NOP?
-        Devices.controllers.disbale();
+        Devices.controllers.disable();
         autonomousController=new AutonomousController();
     }
     /**
